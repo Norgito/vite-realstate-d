@@ -41,18 +41,18 @@ const Header = () => {
   };
 
   const logout = async () => {
-    setIsMenu(false)
-    localStorage.clear()
+    setIsMenu(false);
+    localStorage.clear();
 
     dispatch({
       type: actionType.SET_USER,
       user: null,
     });
-  }
+  };
 
   return (
-    <header className="fixed z-50 min-w-full p-3 px-4 md:p-2 md:px-16">
-      <div className="hidden md:flex flex-wrap w-full h-full items-center justify-between pt-4">
+    <header className="absolute z-50 min-w-full p-3 px-4 md:p-2 md:px-16">
+      <div className="hidden md:flex flex-wrap w-full h-full items-center justify-between p-2">
         <Link to={"/"} className="flex items-center gap-2">
           <p className="font-bold text-headText">SunCaribbeanRealty.com</p>
           {/* <img src={Logo} className=" object-cover w-30" alt="logo" / > */}
@@ -107,14 +107,14 @@ const Header = () => {
           </Link>
 
           <Link to="">
-            <ImFacebook2 className="text-headText"/>
+            <ImFacebook2 className="text-headText" />
           </Link>
           {/* Social Media */}
           <div className="relative">
             <motion.img
               whileTap={{ scale: 0.6 }}
               onClick={login}
-              src={user ? user.photoURL : Avatar }
+              src={user ? user.photoURL : Avatar}
               className="text-xs shadow-2xl w-7 cursor-pointer rounded-full stroke-cyan-500"
             />
             {isMenu && (
@@ -126,14 +126,16 @@ const Header = () => {
               >
                 {user && user.email === "tito.cubanito@gmail.com" && (
                   <Link to={"createContainer"}>
-                    <p className="py-1 flex items-center justify-center gap-2 cursor-pointer hover:bg-blue-300 rounded-lg"
-                    onClick={() => setIsMenu(false)}
+                    <p
+                      className="py-1 flex items-center justify-center gap-2 cursor-pointer hover:bg-blue-300 rounded-lg"
+                      onClick={() => setIsMenu(false)}
                     >
                       Add Item <MdAdd />
                     </p>
                   </Link>
                 )}
-                <p className="py-1 flex items-center justify-center gap-2 cursor-pointer hover:bg-blue-100 rounded-lg"
+                <p
+                  className="py-1 flex items-center justify-center gap-2 cursor-pointer hover:bg-blue-100 rounded-lg"
                   onClick={logout}
                 >
                   Logout <MdLogout />
@@ -173,35 +175,41 @@ const Header = () => {
               )}
 
               <ul className="flex flex-col ">
-                <li className="text-base text-textColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-blue-300  px-4 py-2"
-                onClick={() => setIsMenu(false)}
+                <li
+                  className="text-base text-textColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-blue-300  px-4 py-2"
+                  onClick={() => setIsMenu(false)}
                 >
                   For Sale
                 </li>
-                <li className="text-base text-textColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-blue-300  px-4 py-2"
-                onClick={() => setIsMenu(false)}
+                <li
+                  className="text-base text-textColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-blue-300  px-4 py-2"
+                  onClick={() => setIsMenu(false)}
                 >
                   For Rent
                 </li>
-                <li className="text-base text-textColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-blue-300  px-4 py-2"
-                onClick={() => setIsMenu(false)}
+                <li
+                  className="text-base text-textColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-blue-300  px-4 py-2"
+                  onClick={() => setIsMenu(false)}
                 >
                   Residences
                 </li>
-                <li className="text-base text-textColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-blue-300  px-4 py-2"
-                onClick={() => setIsMenu(false)}
+                <li
+                  className="text-base text-textColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-blue-300  px-4 py-2"
+                  onClick={() => setIsMenu(false)}
                 >
                   Property M.
                 </li>
-                <li className="text-base text-textColor duration-100 transition-all ease-in-out cursor-pointer  hover:bg-blue-300  px-4 py-2"
-                onClick={() => setIsMenu(false)}
+                <li
+                  className="text-base text-textColor duration-100 transition-all ease-in-out cursor-pointer  hover:bg-blue-300  px-4 py-2"
+                  onClick={() => setIsMenu(false)}
                 >
                   About Us
                 </li>
               </ul>
 
-              <p className="m-2 p-2 rounded-md shadow-lg flex items-center gap-3 bg-gray-200 cursor-pointer hover:bg-blue-500  justify-center"
-              onClick={logout}
+              <p
+                className="m-2 p-2 rounded-md shadow-lg flex items-center gap-3 bg-gray-200 cursor-pointer hover:bg-blue-500  justify-center"
+                onClick={logout}
               >
                 Logout <MdLogout />
               </p>

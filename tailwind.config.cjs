@@ -50,7 +50,8 @@ module.exports = {
       colors: {
         headingColor: "#000000",
         textColor: "#515151",
-        hColor: "#f7ca87",
+        primaryC: "#d9a927",
+        secondaryC: '#408dec',
         headText: "#ffff",
         cartNumBg: "#e80013",
         primary: "#f5f3f3",

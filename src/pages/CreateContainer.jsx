@@ -18,6 +18,8 @@ import {
 } from "firebase/storage";
 import { storage } from "../utils/firebaseConfig";
 import { saveItem } from "../utils/firebaseFunctions";
+import Image from "../assets/img/house-banner.png";
+
 
 const CreateContainer = () => {
   const [name, setName] = useState("");
@@ -163,8 +165,13 @@ const CreateContainer = () => {
   };
 
   return (
-    <div className="w-full min-h-screen flex justify-center items-center pt-16">
-      <div className="w-[90%] md:w-[75%] border border-gray-300 rounded-lg p-4 flex flex-col items-center justify-center gap-4">
+    <>
+      <div className="w-full relative items-center justify-center">
+      <img src={Image} alt="" className="inset-0 absolute " />
+      </div>
+    <div className="w-full z-10 min-h-screen flex justify-center items-center pt-16">
+      
+      <div className="z-50 w-[90%] md:w-[75%] border backdrop-blur-sm bg-white/50 border-gray-300 rounded-lg p-4 flex flex-col items-center justify-center gap-4">
         {fields && (
           <motion.p
             initial={{ opacity: 0 }}
@@ -181,18 +188,18 @@ const CreateContainer = () => {
         )}
         <div className="w-full flex flex-col md:flex-row items-center gap-3">
           <div className="w-full py-2 border-b border-gray-300 flex items-center gap-2">
-            <MdOutlineDriveFileRenameOutline className="text-xl text-gray-700" />
+            <MdOutlineDriveFileRenameOutline className="text-xl text-white" />
             <input
               type="text"
               required
               value={name}
               onChange={(e) => setName(e.target.value)}
               placeholder="House name..."
-              className="w-full h-full text-md bg-transparent outline-none border-none placeholder:text-gray-400 text-textColor text-lg "
+              className="w-full h-full text-md bg-transparent outline-none border-none placeholder:text-gray-200 text-white text-lg "
             />
           </div>
           <div className="w-full py-2 border-b border-gray-300 flex items-center gap-2">
-            <MdAttachMoney className=" text-gray-700 text-2xl" />
+            <MdAttachMoney className=" text-white text-2xl" />
             <input
               type="text"
               required
@@ -375,7 +382,8 @@ const CreateContainer = () => {
           </button>
         </div>
       </div>
-    </div>
+      </div>
+      </>
   );
 };
 
